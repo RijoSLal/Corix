@@ -1,0 +1,14 @@
+pymongo
+fastapi
+uvicorn
+numpy 
+scikit-learn
+imblearn 
+mlflow==2.20.1
+joblib 
+logging
+bcrypt 
+pydantic 
+certifi 
+tensorflow
+python-dotenv

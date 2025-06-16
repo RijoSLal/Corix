@@ -1,0 +1,6 @@
+.env
+container/
+example.log
+training/training_datasets/cardiac_signals_wearables.csv
+training/training_datasets/cardio_lab_train.csv
+**/__pycache__/
