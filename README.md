@@ -110,6 +110,7 @@ To pull latest model/data versions:
 dvc pull
 ```
 
+
 ---
 
 ## 📡 API Endpoints Overview
@@ -120,6 +121,7 @@ dvc pull
 | `/user_info`              | POST   | Retrieve user account information              |
 | `/predict/from-lab`       | POST   | Predict health risk using lab parameters       |
 | `/predict/from-wearables` | POST   | Predict health risk using wearable sensor data |
+
 
 ---
 
@@ -240,7 +242,8 @@ curl -X POST http://localhost:8000/predict/from-lab \
 
 ## 🤝 Contributing
 
-Fork the repo → create a branch → commit your changes → push → open a Pull Request.
+**Fork the repo → create a branch → commit your changes → push → open a Pull Request.**
+
 ---
 
 ## 📜 License
