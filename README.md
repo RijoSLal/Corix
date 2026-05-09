@@ -2,6 +2,8 @@
 
 **Heart Health Prediction API via Wearables & Lab Data**
 
+![corix](assets/file.svg)
+
 **Corix** is a ML-based API service built with **FastAPI** that predicts heart health risks using both wearable device metrics and lab test results. It leverages **Advance machine learning models and pipelines** integrated with **MongoDB**, **DVC**, **MLflow** for mlops workflows, containerized and hosted on **AWS**.
 
 ---
