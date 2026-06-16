@@ -6,7 +6,6 @@
 
 **Corix** is a ML-based API service built with **FastAPI** that predicts heart health risks using both wearable device metrics and lab test results. It leverages **Advance machine learning models and pipelines** integrated with **MongoDB**, **DVC**, **MLflow** for mlops workflows, containerized and hosted on **AWS**.
 
----
 
 ## 🚀 Features
 
@@ -20,7 +19,6 @@
 * ☁️ Hosted on AWS
 * 🔁 Model retraining and version control
 
----
 
 ## 🧠 ML Architecture
 
@@ -34,7 +32,6 @@ Model lifecycle is tracked using:
 * **DVC** for dataset and model versioning
 * **MLflow** for experiment tracking and deployment
 
----
 
 ## 🛠️ Tech Stack
 
@@ -44,7 +41,6 @@ Model lifecycle is tracked using:
 * **Tracking**: MLflow + DVC on Dagshub
 * **Deployment**: Docker, AWS
 
----
 
 ## 📁 Project Structure
 
@@ -67,14 +63,12 @@ Corix/
 │   └── upload_model.py         # Upload models to MLflow with parameters and metrices
 ```
 
----
 
 ## 🔐 Authentication
 
 * **API Key system**: Each user receives a unique API key upon registration.
 * **Daily token limit**: Usage restricted by a configurable daily request limit.
 
----
 
 ## 📦 Installation & Setup
 
@@ -97,7 +91,6 @@ docker run -p 8000:8000 corix-service
 
 `http://localhost:8000/docs`
 
----
 
 ## 🔄 Model & Data Versioning
 
@@ -125,7 +118,6 @@ dvc pull
 | `/predict/from-wearables` | POST   | Predict health risk using wearable sensor data |
 
 
----
 
 ## 🧾 API Documentation Details
 
@@ -142,8 +134,6 @@ dvc pull
 }
 ```
 
----
-
 ### 👤 `/user_info`
 
 **Description:** Retrieve stored user information
@@ -156,7 +146,6 @@ dvc pull
 }
 ```
 
----
 
 ### 🧪 `/predict/from-lab`
 
@@ -206,8 +195,6 @@ dvc pull
 }
 ```
 
----
-
 ## 🧪 Example Usage (cURL)
 
 ### Register:
@@ -240,15 +227,11 @@ curl -X POST http://localhost:8000/predict/from-lab \
 }'
 ```
 
----
-
 ## 🤝 Contributing
 
 **Fork the repo → create a branch → commit your changes → push → open a Pull Request.**
 
----
-
 ## 📜 License
 
-MIT License © [RijoSLal](https://github.com/RijoSLal)
+MIT License © [LICENSE](LICENSE)
 
