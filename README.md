@@ -4,6 +4,130 @@
 
 ![corix](assets/file.svg)
 
+**Corix** is an ML-based API service built with **FastAPI** that predicts heart health risks using both wearable device metrics and lab test results. It leverages advanced machine learning models and pipelines integrated with **MongoDB**, **DVC**, and **MLflow** for MLOps workflows, containerized and hosted on **AWS**.
+
+## Features
+
+* API Key Authentication with user registration and token quota
+* Dual-Model Prediction:
+  * RFC model for wearable data
+  * LSTM model for lab results
+* ML Model Management using DVC & MLflow on [Dagshub](https://dagshub.com/slalrijo2005/Corix)
+* Dockerized for easy deployment
+* Hosted on AWS
+* Model retraining and version control
+
+## ML Architecture
+
+| Data Type     | Model Used                       | Purpose                        |
+| -------------- | --------------------------------- | -------------------------------- |
+| Wearable Data | RandomForestClassifier (Sklearn) | Feature-driven risk prediction |
+| Lab Data      | LSTM (TensorFlow/Keras)          | Time-series based prediction   |
+
+Model lifecycle is tracked using:
+
+* **DVC** for dataset and model versioning
+* **MLflow** for experiment tracking and deployment
+
+## Tech Stack
+
+* **Backend**: FastAPI
+* **Database**: MongoDB
+* **Cache**: Redis
+* **ML Models**: Scikit-learn, LSTM (TensorFlow/Keras)
+* **Tracking**: MLflow + DVC on Dagshub
+* **Deployment**: Docker, AWS
+
+## Project Structure
+
+```
+Corix/
+├── assets/
+│   └── file.svg                # README image asset
+├── LICENSE
+├── README.md
+├── service/
+│   ├── basic.py                # Basic service utilities
+│   ├── docker-compose.yaml     # Multi-container orchestration
+│   ├── Dockerfile              # Container setup
+│   ├── model/                  # Model artifacts
+│   ├── model_retriever.py      # Model fetch
+│   ├── mongo.py                # DB connection
+│   ├── redis_client.py         # Redis connection/caching
+│   ├── requirements.txt
+│   └── service.py              # FastAPI main application
+└── training/
+    ├── model_retraining.py     # Model training pipeline
+    ├── requirements.txt
+    ├── training_datasets/      # Sample data for retraining
+    └── upload_model.py         # Upload models to MLflow with parameters and metrics
+```
+
+## Authentication
+
+* **API Key system**: Each user receives a unique API key upon registration.
+* **Daily token limit**: Usage restricted by a configurable daily request limit.
+
+## Installation & Setup
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/RijoSLal/Corix.git
+cd Corix
+```
+
+### 2. Run with Docker Compose (recommended)
+
+```bash
+cd service
+docker compose up --build
+```
+
+this will start the API service along with its Redis dependency.
+
+### 3. API will be live at
+
+`http://localhost:8000/`
+
+## Model & Data Versioning
+
+Corix uses **DVC** and **MLflow**, tracked via **Dagshub**:
+
+* Track experiments with MLflow
+* Push/pull models via DVC
+
+To pull the latest model/data versions:
+
+```bash
+dvc pull
+```
+
+## API Endpoints Overview
+
+| Endpoint                  | Method | Description                                    |
+| -------------------------- | ------ | ------------------------------------------------- |
+| `/register`               | POST   | Register a new user                            |
+| `/user_info`              | POST   | Retrieve user account information              |
+| `/predict/from-lab`       | POST   | Predict health risk using lab parameters       |
+| `/predict/from-wearables` | POST   | Predict health risk using wearable sensor data |
+
+Full request/response schemas and interactive testing for all endpoints are available at the root `/` endpoint once the service is running.
+
+## Contributing
+
+Fork the repo, create a branch, commit your changes, push, and open a Pull Request.
+
+## License
+
+MIT License © [LICENSE](LICENSE)
+
+<!-- # Corix 🫀
+
+**Heart Health Prediction API via Wearables & Lab Data**
+
+![corix](assets/file.svg)
+
 **Corix** is a ML-based API service built with **FastAPI** that predicts heart health risks using both wearable device metrics and lab test results. It leverages **Advance machine learning models and pipelines** integrated with **MongoDB**, **DVC**, **MLflow** for mlops workflows, containerized and hosted on **AWS**.
 
 
@@ -45,8 +169,7 @@ Model lifecycle is tracked using:
 ## 📁 Project Structure
 
 ```
-Corix/
-├── container/                  # Python virtual environment (excluded in Docker build)
+Corix/                
 ├── example.log                 # Log examples
 ├── __pycache__/                # Compiled files
 ├── service/
@@ -234,4 +357,4 @@ curl -X POST http://localhost:8000/predict/from-lab \
 ## 📜 License
 
 MIT License © [LICENSE](LICENSE)
-
+ -->

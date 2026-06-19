@@ -12,3 +12,4 @@ pydantic
 certifi 
 tensorflow
 python-dotenv
+redis
